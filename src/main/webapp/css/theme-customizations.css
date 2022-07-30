@@ -1,0 +1,135 @@
+.text-builtBy {
+    color: #888;
+}
+
+.xn-logoImage {
+    background: url("../img/small_logo.png") top center no-repeat;
+    width: 95%;
+    height: 50px;
+}
+
+.xn-titleText {
+    font-size: 22px;
+    color: beige;
+    margin-top: 10px;
+    margin-left: 17px;
+}
+
+.clickableRow:hover {
+    background-color:#F6FAF6;
+    cursor: pointer;
+}
+
+.btn-filter {
+    margin-top: 20px;
+}
+
+.row-filter {
+    padding-bottom: 15px;
+}
+.scrollable {
+    display: block;
+    overflow-x: auto;
+}
+.req:after{
+    content:' *';
+    color:#da4453;
+}
+.warning1 {
+    background-color:#ffe5e5
+}
+.warning1:hover {
+    background-color: #ffcccc;
+    cursor: pointer;
+}
+.login-containerRe {
+    float: left;
+    width: 100%;
+    min-height: 100%;
+    background: url("../img/bg.png") left top repeat #072d48;
+}
+.login-containerlo {
+    float: left;
+    width: 100%;
+    min-height: 100%;
+    background: url("../img/bg.png") left top repeat #eee;
+}
+.login-containerSession {
+    float: left;
+    width: 100%;
+    min-height: 100%;
+    background: url("../img/bg.png") left top repeat #012e4f;
+}
+
+.login-container .login-box .login-body .login-titleLo {
+    color: #080808;
+    font-size: 19px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+
+.login-container-reg .login-box-reg .login-body-reg {
+    width: 100%;
+    float: left;
+    background: #1b1e24;
+    padding: 10px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+.login-container-reg .login-box-reg .login-body-reg .login-title-reg {
+    color: #000000;
+    font-size: 19px;
+    font-weight: 300;
+    margin-bottom: 20px;
+}
+.login-logo-reg {
+    background: url("../img/logo.png") top center no-repeat;
+    width: 100%;
+    height: 50px;
+    float: left;
+    padding: 90px;
+}
+.login-logo-pdf {
+    background: url("../img/Code-Logo-OnWhite-Brain.png") top center no-repeat;
+    width: 100%;
+    height: 50px;
+    float: left;
+    padding: 90px;
+}
+.btn-info {
+    background-color: #2484c7;
+    border-color: #2484c7;
+}
+
+.panelTaker{
+    background-color: #012e4f;  
+}
+
+/* Center the loader */
+#loaderImg {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+}
+#loadingText { 
+    position: fixed;
+    border-radius: 5px;
+    top: 60%;
+    left: 50%;
+    margin-left: -170px;
+    z-index: 1;
+    font-size:10px;  
+    font-family: 'Open Sans', sans-serif;  
+    color: white;
+    background-color: #3498db;
+}  

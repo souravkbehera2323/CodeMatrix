@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+    <property name="logPath" value="/home/altius/logs/matrixCodeVerse" />
+     <appender name="RootConsole" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>
+                %black(%d{ISO8601}) %highlight(%-5level) [%blue(%t)] %yellow(%C{1.}): %msg%n%throwable
+            </Pattern>
+        </layout>
+    </appender>
+ 
+    <appender name="RootFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logPath}/rootLogger.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{ISO8601} %p %c{2} [%t] %msg%n%throwable</Pattern>
+        </encoder>
+ 
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            <fileNamePattern>${logPath}/archived/rootLogger-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+    
+    <appender name="SpringBootFile" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logPath}/springBootLogger.log</file>
+        <encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+            <Pattern>%d{ISO8601} %p [%t] %c{2}\(%line\) %msg%n%throwable</Pattern>
+        </encoder>
+ 
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- rollover daily and when the file reaches 10 MegaBytes -->
+            <fileNamePattern>${logPath}/archived/springBootLogger-%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+            <timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+                <maxFileSize>5MB</maxFileSize>
+            </timeBasedFileNamingAndTriggeringPolicy>
+        </rollingPolicy>
+    </appender>
+    
+    <!-- LOG everything at INFO level -->
+    <root level="info">
+        <appender-ref ref="RootConsole" />
+        <appender-ref ref="RootFile" />
+    </root>
+    
+    <!-- LOG "com.baeldung*" at TRACE level -->
+    <logger name="cc.altius.sb" level="info" additivity="false">
+        <appender-ref ref="SpringBootFile" />
+        <appender-ref ref="RootConsole" />
+        <!--<appender-ref ref="SpringBootDb" />-->
+    </logger>
+    
+    <logger name="com.zaxxer.hikari" level="debug" additivity="false">
+        <!--<appender-ref ref="RootConsole" />-->
+        <!--<appender-ref ref="RootFile" />-->
+    </logger>
+ 
+</configuration>

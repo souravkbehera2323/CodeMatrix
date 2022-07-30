@@ -1,0 +1,5 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target" : { "namespace": "android_app", "package_name": "cc.altius.testing.codematrix",
+               "sha256_cert_fingerprints": ["FC:AA:64:6B:19:BE:81:C2:98:EF:EB:D5:3C:43:F8:FA:BE:C0:CD:A6:2D:48:6A:B4:BD:DD:B5:44:2E:2D:4B:E7"] }
+}]
